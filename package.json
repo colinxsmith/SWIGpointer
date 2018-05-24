@@ -1,0 +1,20 @@
+{
+  "name": "simple",
+  "version": "1.0.0",
+  "description": "",
+  "main": "runme.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node-gyp configure build",
+    "conf": "node-gyp configure",
+    "run": "echo \"Try this\" && node runme.js",
+    "install": "node-gyp rebuild"
+  },
+  "author": "me",
+  "license": "ISC",
+  "gypfile": true,
+  "dependencies": {
+    "node": "6.8.1",
+    "node-gyp": "^3.6.2"
+  }
+}
