@@ -3,6 +3,7 @@
 
 %{
 extern void add(int *, int *, int *);
+extern void sub(int *, int *, int *);
 extern void subtract(int *, int *, int *);
 extern int divide(int, int, int *);
 %}
@@ -12,6 +13,7 @@ extern int divide(int, int, int *);
 
 /* First we'll use the pointer library */
 extern void add(int *x, int *y, int *result);
+extern void sub(int *x, int *y, int *result);
 %include cpointer.i
 %pointer_functions(int, intp);
 

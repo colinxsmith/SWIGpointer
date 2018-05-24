@@ -14,7 +14,7 @@ console.log(" b = " + example.intp_value(b));
 console.log(" c = " + example.intp_value(c));
 
 //// Call the add() function with some pointers
-example.add(a, b, c);
+example.sub(a, b, c);
 
 //
 //// Now get the result
