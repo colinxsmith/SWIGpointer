@@ -13,8 +13,8 @@ else
 	JSV8_VERSION=0x031110
 endif
 
-EXAMPLES_TOP   = ../..
-SWIG_TOP       = ../../..
+EXAMPLES_TOP   = /home/colin/SWIGpointer
+SWIG_TOP       = /home/colin/SWIGcvs/SWIG
 SWIGEXE        = $(SWIG_TOP)/swig
 SWIG_LIB_DIR   = $(SWIG_TOP)/$(TOP_BUILDDIR_TO_TOP_SRCDIR)Lib
 TARGET         = example

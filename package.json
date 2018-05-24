@@ -5,9 +5,9 @@
   "main": "runme.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node-gyp configure build",
+    "start": "cd javascript/pointer && node-gyp configure build",
     "conf": "node-gyp configure",
-    "run": "echo \"Try this\" && node runme.js",
+    "run": "cd javascript/pointer && echo \"Try this\" && node runme.js",
     "install": "node-gyp rebuild"
   },
   "author": "me",

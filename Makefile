@@ -60,7 +60,7 @@ INTERFACEPATH = $(SRCDIR)$(INTERFACEDIR)$(INTERFACE)
 SWIGOPT    =
 
 # SWIG_LIB_DIR and SWIGEXE must be explicitly set by Makefiles using this Makefile
-SWIG_LIB_DIR = ./Lib
+SWIG_LIB_DIR = /home/colin/SWIGcvs/SWIG/Lib
 SWIGEXE    = swig
 SWIG_LIB_SET = env SWIG_LIB=$(SWIG_LIB_DIR)
 SWIGTOOL   =
