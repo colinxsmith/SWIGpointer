@@ -4,6 +4,7 @@
   "description": "",
   "main": "runme.js",
   "scripts": {
+    "make": "cd javascript/pointer && make",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cd javascript/pointer && node-gyp configure build",
     "conf": "node-gyp configure",
