@@ -1,3 +1,8 @@
+Started life as the SWIG javascript example for SWIG pointer library. 24-5-2018
+
+
+
+
 1  npm run make
 2  npm i
 3  npm start
