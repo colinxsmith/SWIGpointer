@@ -7,3 +7,13 @@ Started life as the SWIG javascript example for SWIG pointer library. 24-5-2018
 2  npm i
 3  npm start
 4  npm run run
+
+OR
+
+npm i
+npm run clean
+npm run make
+npm run install
+npm run run
+
+npm i will try to run install but will fail if make has not run

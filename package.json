@@ -10,13 +10,13 @@
     "start": "cd javascript/pointer && node-gyp configure build",
     "conf": "node-gyp configure",
     "run": "cd javascript/pointer && echo \"Try this\" && node runme.js",
-    "install": "node-gyp rebuild"
+    "install": "cd javascript/pointer && node-gyp rebuild"
   },
   "author": "me",
   "license": "ISC",
   "gypfile": true,
   "dependencies": {
-    "node": "6.8.1",
-    "node-gyp": "^3.6.2"
+    "node": "6",
+    "node-gyp": "3"
   }
 }
