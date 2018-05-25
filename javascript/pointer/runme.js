@@ -39,3 +39,9 @@ console.log('divide(37,42) returns ' + r)
 var a=37,b=42;
 r = example.subtract(a,b);
 console.log(r[0]);
+
+var a = [1.0,2.0,3.0,4.0],b = [1,1,1,1];
+example.aaa = a;
+//example.bbb = b;
+//var dot = example.opt(a.length,example.aaa,example.bbb);
+//console.log(dot);
