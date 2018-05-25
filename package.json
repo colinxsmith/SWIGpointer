@@ -8,9 +8,9 @@
     "make": "cd javascript/pointer && make clean && make",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cd javascript/pointer && node-gyp configure build",
-    "conf": "node-gyp configure",
+    "conf": "cd javascript/pointer && node-gyp configure",
     "run": "cd javascript/pointer && echo \"Try this\" && node runme.js",
-    "install": "cd javascript/pointer && node-gyp rebuild"
+    "install": "cd javascript/pointer && make && node-gyp rebuild"
   },
   "author": "me",
   "license": "ISC",

@@ -4,8 +4,8 @@
 %{
 extern void add(int *, int *, int *);
 extern void sub(int *, int *, int *);
-extern void subtract(int *, int *, int *);
-extern int divide(int, int, int *);
+extern void subtract(double *, double *, double *);
+extern void divide(double *, double *, double *);
 %}
 
 /* This example illustrates a couple of different techniques
@@ -20,12 +20,14 @@ extern void sub(int *x, int *y, int *result);
 /* Next we'll use some typemaps */
 
 %include typemaps.i
-extern void subtract(int *INPUT, int *INPUT, int *OUTPUT);
+extern void subtract(double *INPUT, double *INPUT, double *OUTPUT);
 
 /* Next we'll use typemaps and the %apply directive */
 
-%apply int *OUTPUT { int *r };
-extern int divide(int n, int d, int *r);
+%apply double *OUTPUT { double *r };
+%apply double *INPUT { double *a };
+%apply double *INPUT { double *b };
+extern void divide(double *a, double *b, double *r);
 
 
 

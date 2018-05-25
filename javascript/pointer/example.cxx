@@ -7,13 +7,10 @@ void sub(int *x, int *y, int *result) {
   *result = *x - *y;
 }
 
-void subtract(int *x, int *y, int *result) {
+void subtract(double *x, double *y, double *result) {
   *result = *x - *y;
 }
 
-int divide(int n, int d, int *r) {
-   int q;
-   q = n/d;
-   *r = n - q*d;
-   return q;
+void divide(double *n, double *d, double *r) {
+   *r = *n/ *d;
 }
