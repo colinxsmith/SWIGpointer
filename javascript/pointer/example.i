@@ -7,6 +7,7 @@ extern void sub(int *, int *, int *);
 extern void subtract(double *, double *, double *);
 extern void divide(double *, double *, double *);
 extern double opt(int n,double*a,double*b);
+double aaa[4],bbb[4];
 %}
 
 /* This example illustrates a couple of different techniques
@@ -22,18 +23,13 @@ extern void sub(int *x, int *y, int *result);
 
 %include typemaps.i
 extern void subtract(double *INPUT, double *INPUT, double *OUTPUT);
-
-/* Next we'll use typemaps and the %apply directive */
+/* Next we'll use typemaps and the %apSWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_int, 0 |  0 )ply directive */
 
 %apply double *OUTPUT { double *r };
 %apply double *INPUT { double *a };
 %apply double *INPUT { double *b };
 extern void divide(double *a, double *b, double *r);
 
-%inline %{
-    double aaa[4];
-    double bbb[4];
-%}
 %include <arrays_javascript.i>
 extern double opt(int n,double*a,double*b);
 
