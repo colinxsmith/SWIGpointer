@@ -2,35 +2,44 @@
 %module example
 
 %{
-extern void add(int *, int *, int *);
-extern void sub(int *, int *, int *);
-extern void subtract(double *, double *, double *);
-extern void divide(double *, double *, double *);
 extern double opt(int n,double*a,double*b);
-double aaa[4],bbb[4];
 %}
 
-/* This example illustrates a couple of different techniques
-   for manipulating C pointers */
+%typemap(in) double*
+{
+    $1 = 0;
+    if($input->IsArray())
+    {
+     v8::Handle<v8::Array> arr= v8::Handle<v8::Array>::Cast($input);
+//     printf("Length %d\n",arr->Length());
+     $1 = new double[arr->Length()];
+     for(size_t i = 0;i < arr->Length();++i) {
+     $1[i] = arr->Get(i)->NumberValue();
+//     printf("a[%d] %f\n",i,$1[i]);
 
-/* First we'll use the pointer library */
-extern void add(int *x, int *y, int *result);
-extern void sub(int *x, int *y, int *result);
-%include cpointer.i
-%pointer_functions(int, intp);
+     }
+    }
 
-/* Next we'll use some typemaps */
+}
+%typemap(argout) double*
+{
+    if($1 && $input->IsArray()) {
+/*     //   v8::Isolate* isolate = $input->GetIsolate();
+     v8::Handle<v8::Array> arr= v8::Handle<v8::Array>::Cast($input);
+     for(size_t i = 0;i < arr->Length();++i) {
+     arr->Set(i,v8::Number::New(isolate,$1[i]));
+//     printf("a[%d] %f\n",i,$1[i]);
 
-%include typemaps.i
-extern void subtract(double *INPUT, double *INPUT, double *OUTPUT);
-/* Next we'll use typemaps and the %apSWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_int, 0 |  0 )ply directive */
 
-%apply double *OUTPUT { double *r };
-%apply double *INPUT { double *a };
-%apply double *INPUT { double *b };
-extern void divide(double *a, double *b, double *r);
+     }*/
+        
+    }
+}
+%typemap(freearg) double*
+{
+   if($1) delete[] $1;
+}
 
-%include <arrays_javascript.i>
 extern double opt(int n,double*a,double*b);
 
 
