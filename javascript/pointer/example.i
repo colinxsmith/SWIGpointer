@@ -24,14 +24,12 @@ extern double opt(int n,double*a,double*b);
 %typemap(argout) double*
 {
     if($1 && $input->IsArray()) {
-/*     //   v8::Isolate* isolate = $input->GetIsolate();
      v8::Handle<v8::Array> arr= v8::Handle<v8::Array>::Cast($input);
      for(size_t i = 0;i < arr->Length();++i) {
-     arr->Set(i,v8::Number::New(isolate,$1[i]));
+         v8::Local<v8::Number> kkk = SWIGV8_NUMBER_NEW($1[i]*10);
+     arr->Set(i,kkk);
 //     printf("a[%d] %f\n",i,$1[i]);
-
-
-     }*/
+     }
         
     }
 }
