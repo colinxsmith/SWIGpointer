@@ -17,3 +17,6 @@ npm run install
 npm run run
 
 npm i will try to run install but will fail if make has not run
+
+Now we just wrap double* and do scalar product in c and change one of the 
+input arrays 30-5-2018
