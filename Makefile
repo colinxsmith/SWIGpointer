@@ -651,8 +651,8 @@ java_clean:
 ROOT_DIR = /home/colin/SWIGcvs/SWIG
 JSINCLUDES =  -I"/usr/include"
 JSDYNAMICLINKING =  -L/usr/lib/ -lv8
-NODEJS = nodejs
-NODEGYP = node-gyp
+NODEJS = ../../node_modules/.bin/node
+NODEGYP = ../../node_modules/.bin/node-gyp
 
 # ----------------------------------------------------------------
 # Creating and building Javascript wrappers
