@@ -18,7 +18,9 @@ void divide(double *n, double *d, double *r) {
 double opt(int n,double*a,double*b) {
   double back = 0;
   while(n--) {
-    back += *a++ * *b++;
+    back += *a++ * *b;
+    *b *= 10;
+    b++;
   }
   return back;
 }
